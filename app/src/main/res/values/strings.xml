@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Shopify Memory Match</string>
+    <string name="pairs_label">Groups Found:</string>
+    <string name="points_label">Points:</string>
+</resources>
