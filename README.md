@@ -9,7 +9,7 @@ Libraries used:
 * Glide
 * Android Jetpack (LiveData and ViewModel)
 
-Features
+Features:
 * Reset game
 * Shuffle cards
 * Change number of same products to match
