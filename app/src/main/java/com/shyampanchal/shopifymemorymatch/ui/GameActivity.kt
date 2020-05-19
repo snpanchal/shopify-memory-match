@@ -47,10 +47,10 @@ class GameActivity : AppCompatActivity() {
         }
 
         settings_button.setOnClickListener {
-            val matchesOptions = arrayOf("2 matches", "3 matches", "4 matches")
+            val matchesOptions = arrayOf("2 same products", "3 same products", "4 same products")
 
             val dialogBuilder = AlertDialog.Builder(this)
-            dialogBuilder.setTitle("Select the Number of Matches")
+            dialogBuilder.setTitle("Number of Same Products per Match")
                 .setSingleChoiceItems(matchesOptions, vm.numMatches - 2) { dialog, option ->
                     vm.numMatches = option + 2
                     vm.refetchProducts()
@@ -109,7 +109,7 @@ class GameActivity : AppCompatActivity() {
 
         vm.errorData.observe(this, Observer { errorMsg ->
             val errorDialogBuilder = AlertDialog.Builder(this)
-            errorDialogBuilder.setTitle("Something went wrong")
+            errorDialogBuilder.setTitle("Something went Wrong")
                 .setMessage(errorMsg)
                 .setPositiveButton("Refresh") { _, _ -> vm.refetchProducts() }
             val errorDialog = errorDialogBuilder.create()
