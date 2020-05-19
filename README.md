@@ -9,6 +9,16 @@ Libraries used:
 * Glide
 * Android Jetpack (LiveData and ViewModel)
 
+Sound effects used (from https://themushroomkingdom.net/media/smw/wav):
+* Mario 1-Up sound (used when user matches two cards)
+* Mario course clear sound (used when the user wins the game)
+
+Features
+* Reset game
+* Shuffle cards
+* Change number of same products to match
+* Keep track of high score (least number of moves)
+
 ## Screenshots
 ### No Matches
 <img alt="No Matches" src="images/Screenshot_No_Matches.png" width=250 />
@@ -17,4 +27,4 @@ Libraries used:
 <img alt="Some Matches" src="images/Screenshot_Some_Matches.png" width=250 />
 
 ### All Matches
-<img alt="All Matches" src="images/Screenshot_All_Matches.png" width=250 />
+<img alt="All Matches" src="images/Screenshot_Win.png" width=250 />
