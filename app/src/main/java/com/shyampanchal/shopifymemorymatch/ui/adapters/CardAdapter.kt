@@ -7,14 +7,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.shyampanchal.shopifymemorymatch.R
 import com.shyampanchal.shopifymemorymatch.models.CardState
-import com.shyampanchal.shopifymemorymatch.models.ProductImage
+import com.shyampanchal.shopifymemorymatch.models.Product
 import com.shyampanchal.shopifymemorymatch.ui.listeners.CardClickListener
 import kotlinx.android.synthetic.main.card_view.view.*
 
 class CardAdapter(val cardClickListener: CardClickListener) : RecyclerView.Adapter<CardAdapter.CardViewHolder>() {
 
     var delayClick: Boolean = false
-    var imagesList = emptyList<ProductImage>()
+    var productsList = emptyList<Product>()
         set(value) {
             field = value
             notifyDataSetChanged()
@@ -25,17 +25,17 @@ class CardAdapter(val cardClickListener: CardClickListener) : RecyclerView.Adapt
         return CardViewHolder(view)
     }
 
-    override fun getItemCount() = imagesList.size
+    override fun getItemCount() = productsList.size
 
     override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
-        val image = imagesList[position]
-        Glide.with(holder.itemView.context).load(image.link).into(holder.itemView.image)
-        holder.updateCardState(image.cardState)
+        val product = productsList[position]
+        Glide.with(holder.itemView.context).load(product.image.link).into(holder.itemView.image)
+        holder.updateCardState(product.cardState)
     }
 
     inner class CardViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-        var cardState: CardState = CardState.CLOSED
+        private var cardState: CardState = CardState.CLOSED
 
         init {
             view.image_cover.setOnClickListener {

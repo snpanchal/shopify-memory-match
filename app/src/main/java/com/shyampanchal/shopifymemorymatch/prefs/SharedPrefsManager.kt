@@ -4,7 +4,8 @@ import android.content.Context
 import android.content.SharedPreferences
 
 const val PREFS_NAME = "MemoryMatchPreferences"
-const val  MATCHES_KEY = "numMatches"
+const val MATCHES_KEY = "numMatches"
+const val HIGH_SCORE_KEY = "highScore"
 
 class SharedPrefsManager(context: Context) {
 
@@ -19,4 +20,11 @@ class SharedPrefsManager(context: Context) {
     }
 
     fun readMatches() = sharedPrefs.getInt(MATCHES_KEY, 2)
+
+    fun setHighScore(highScore: Int) {
+        prefsEditor.putInt(HIGH_SCORE_KEY, highScore)
+        prefsEditor.apply()
+    }
+
+    fun readHighScore() = sharedPrefs.getInt(HIGH_SCORE_KEY, 0)
 }

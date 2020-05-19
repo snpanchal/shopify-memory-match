@@ -11,7 +11,6 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
-import javax.inject.Singleton
 
 @Module
 object NetworkModule {
@@ -33,7 +32,7 @@ object NetworkModule {
 
     @Provides
     @Reusable
-    fun provideProductsApi(retrofit: Retrofit) = retrofit.create(ProductsApi::class.java)
+    fun provideProductsApi(retrofit: Retrofit): ProductsApi = retrofit.create(ProductsApi::class.java)
 
     @Provides
     @Reusable
